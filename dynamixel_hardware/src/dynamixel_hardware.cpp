@@ -287,7 +287,7 @@ return_type DynamixelHardware::read(const rclcpp::Time & /* time */, const rclcp
       joints_[i].state.position = dynamixel_workbench_.convertValue2Radian(ids[i], positions[i]);
       joints_[i].state.velocity = dynamixel_workbench_.convertValue2Velocity(ids[i], velocities[i]);
       joints_[i].state.effort = dynamixel_workbench_.convertValue2Current(currents[i]);
-      //RCLCPP_INFO(rclcpp::get_logger(kDynamixelHardware),"id %d, pos: %d, q: %f",ids[i], positions[i],joints_[i].state.position );
+
     }
 
   }
