@@ -57,7 +57,7 @@ CallbackReturn DynamixelHardware::on_init(const hardware_interface::HardwareInfo
   }
 
   main_loop_update_rate_ = stoi(info_.hardware_parameters["main_loop_update_rate"]);
-  desired_hw_update_rate_ = stoi(info_.hardware_parameters["desired_hw_update_rate"]);
+  desired_hw_update_rate_ = main_loop_update_rate_/stoi(info_.hardware_parameters["desired_hw_update_rate"]);
 
   joints_.resize(info_.joints.size(), Joint());
   joint_ids_.resize(info_.joints.size(), 0);
